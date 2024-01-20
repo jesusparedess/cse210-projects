@@ -9,7 +9,7 @@ class Program
         "What was the best part of my day?",
         "Did you excercise and work on your habits today?",
         "What was the strongest emotion I felt today?",
-        "Could you tell us how you feel right now?"
+        "Write anything you want to share"
     };
 
     static void Main()
