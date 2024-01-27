@@ -46,4 +46,4 @@ class Program
 }
 
 // I added a Library class which allows the program to handle multiple scriptures
-// and it will choose scriptures at random to present to the user.
+// and it will choose scriptures at random to present to the user..
