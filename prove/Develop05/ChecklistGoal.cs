@@ -1,7 +1,7 @@
 public class ChecklistGoal : Goal
 {
-    private int _amountCompleted;
     private int _target;
+    private int _amountCompleted;
     private int _bonus;
 
     public ChecklistGoal(string name, string description, int points, int target, int bonus)
@@ -9,21 +9,28 @@ public class ChecklistGoal : Goal
     {
         _target = target;
         _bonus = bonus;
+        _amountCompleted = 0;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _amountCompleted++;
-        // Add logic to update user score and apply bonus if target is reached.
+        Console.WriteLine($"{Name} progress: {_amountCompleted}/{_target}. {Points} points earned.");
+        if (_amountCompleted == _target)
+        {
+            Console.WriteLine($"Bonus achieved! Additional {_bonus} points earned.");
+            return Points;
+        }
+        return 0;
     }
 
-    public override bool IsComplete() => _amountCompleted >= _target;
-
-    public override string GetDetailsString() => "Checklist goal details.";
+    public override bool IsComplete()
+    {
+        return _amountCompleted >= _target;
+    }
 
     public override string GetStringRepresentation()
     {
-        return _amountCompleted >= _target ? $"[X] Completed {_amountCompleted}/{_target} times"
-                                           : $"[ ] Completed {_amountCompleted}/{_target} times";
+        return $"{Name}: {(IsComplete() ? "[X]" : $"[{_amountCompleted}/{_target}]")} - {Description}";
     }
 }

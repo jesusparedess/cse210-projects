@@ -1,16 +1,23 @@
 public class EternalGoal : Goal
 {
     public EternalGoal(string name, string description, int points)
-        : base(name, description, points) { }
-
-    public override void RecordEvent()
+        : base(name, description, points)
     {
-        // Add logic to update user score.
     }
 
-    public override bool IsComplete() => false;
+    public override int RecordEvent()
+    {
+        Console.WriteLine($"{Name} recorded! {Points} points earned.");
+        return Points; 
+    }
 
-    public override string GetDetailsString() => "Eternal goal details.";
+    public override bool IsComplete()
+    {
+        return false; 
+    }
 
-    public override string GetStringRepresentation() => "[ ]";
+    public override string GetStringRepresentation()
+    {
+        return $"{Name} - {Description}";
+    }
 }
