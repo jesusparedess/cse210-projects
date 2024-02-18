@@ -6,7 +6,7 @@ class Program
     {
         Product product1 = new Product("Laptop", "LP100", 999.99, 1);
         Product product2 = new Product("Mouse", "MS200", 19.99, 2);
-        Product product3 = new Product("Speakers", "S300", 19.99, 4);
+        Product product3 = new Product("Speakers", "S300", 79.99, 4);
 
         // Create addresses and customers
         Address address1 = new Address("123 Main St", "SanFran", "CA", "USA");
