@@ -14,5 +14,17 @@ class Program
         // Create orders
         Order order1 = new Order(customer1);
         order1.AddProduct(product1);
+        order1.AddProduct(product2);
+
+        // Display packing and shipping labels and total cost for the order
+        Console.WriteLine(order1.GetPackingLabel());
+        Console.WriteLine(order1.GetShippingLabel());
+        Console.WriteLine($"Total cost: ${order1.CalculateTotalCost()}");
+
+        // Repeat the process for another order with different products and customer
+        // ...
+
+        // Wait for user input to close the console window
+        Console.ReadLine();
     }
 }
