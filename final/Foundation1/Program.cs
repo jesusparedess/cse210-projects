@@ -9,14 +9,14 @@ class Program
             new Video("Video 3", "Author C", 160)
         };
 
-        // Adding comments to each video
+        
         videos[0].AddComment(new Comment("User1", "Great video!"));
         videos[0].AddComment(new Comment("User2", "Thanks for the info."));
         videos[1].AddComment(new Comment("User3", "Very informative."));
         videos[2].AddComment(new Comment("User4", "Loved it!"));
         videos[2].AddComment(new Comment("User5", "Please make more."));
 
-        // Displaying video information
+        
         foreach (var video in videos)
         {
             video.DisplayVideoInfo();
